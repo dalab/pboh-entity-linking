@@ -2,7 +2,7 @@
 
 PBoH Entity Linking system.
 
-Reference: "Probabilistic Bag-Of-Hyperlinks Model for Entity Linking" , Ganeao O-E et al. , (proc. WWW 2016), http://arxiv.org/abs/1509.02301
+Reference: "Probabilistic Bag-Of-Hyperlinks Model for Entity Linking" , Ganea O-E et al. , (proc. WWW 2016), http://arxiv.org/abs/1509.02301
 
 Code: coming soon ...
 
