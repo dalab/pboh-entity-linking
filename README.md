@@ -9,4 +9,4 @@ Paper: "Probabilistic Bag-Of-Hyperlinks Model for Entity Linking" , Ganea O-E et
 Slides: http://people.inf.ethz.ch/ganeao/WWW16_slides_PBOH.pdf
 
 Other results: 
-results on the newest version 1.2.1 of Gerbil can be found here: http://gerbil.aksw.org/gerbil/experiment?id=201602110004 . The InKB results are the ones of interest (since we do not address the issue of out of KB entities). Please note that there is a drop in performance of all systems from version 1.1.4 to version 1.2.1 of Gerbil (details here: https://github.com/AKSW/gerbil/issues/98)
+results on the newest version 1.2.2 of Gerbil can be found here: http://gerbil.aksw.org/gerbil/experiment?id=201604270015 . The InKB results are the ones of interest (since we do not address the issue of out of KB entities). Please note that there is a drop in performance of all systems from version 1.1.4 to version 1.2.* of Gerbil (details here: https://github.com/AKSW/gerbil/issues/98)
