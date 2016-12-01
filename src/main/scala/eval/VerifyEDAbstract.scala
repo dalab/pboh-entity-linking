@@ -15,8 +15,7 @@ abstract class VerifyEDAbstract(allIndexesBox : AllIndexesBox) {
     
   // To be init
   val mentEntsCache : MentEntsFreqIndexWrapper
- 
-  
+
   var totalGroundTruthAnnots : Long = 0
   
   var missingTokenSpansInIndex = 0
@@ -30,9 +29,7 @@ abstract class VerifyEDAbstract(allIndexesBox : AllIndexesBox) {
   
   private var missingMentionStrings = new THashSet[String]
   private var missingGroundTruthInMentionCandidateList = new THashSet[String]
-  
-  /////////////////////////////////////////////////////////////////////
-  
+
   // Creates a list of mentions from a list of strings.
   // Also sets a candidate list for each mention.
   def getMentions(
@@ -149,52 +146,7 @@ abstract class VerifyEDAbstract(allIndexesBox : AllIndexesBox) {
       println("Mention normalized = " + annotation.getMention.getNgram + "; e = "
           + entIDToNameIndex.get(annotation.getEntity()) +
           "; Ground truth e =  " + entIDToNameIndex.get(annotation.getGroundTruthEntity()))
-        
-          /*
-      if (scorer != null) {
-        if (annotation.getEntity != annotation.getGroundTruthEntity) {
-          
-          println("Rhos:")
-          println("rho(truth_e, m) = " + scorer.rho(annotation.getMention.getNgram, annotation.getGroundTruthEntity, false))
-          println("rho(e,m) = " + scorer.rho(annotation.getMention.getNgram, annotation.getEntity, false)) 
-            
-          println("LAMBDAS:")
-
-          var sum_lambdas_e = 0.0
-          var sum_lambdas_truth_e = 0.0
-          for (a <- verifier.getCorrectAnnotations) {
-            if (annotation.getMention.getNgram != a.getMention.getNgram) {
-              println
-              println("    lam(truth_e, " + entIDToNameIndex.get(a.getEntity()) + ") = " + scorer.lambda(annotation.getGroundTruthEntity, a.getEntity, true))
-              println("    lam(e, " + entIDToNameIndex.get(a.getEntity()) + ") = " + scorer.lambda(annotation.getEntity, a.getEntity, true))
-
-              sum_lambdas_e += scorer.lambda(annotation.getEntity, a.getEntity, false)
-              sum_lambdas_truth_e += scorer.lambda(annotation.getGroundTruthEntity, a.getEntity, false)
-            }
-          }
-
-          /*
-          println("Done lambdas. Avg e = " + 2* (sum_lambdas_e / (verifier.solutionSize - 1)) + " ; avg ground truth e = " + 2* (sum_lambdas_truth_e / (verifier.solutionSize - 1)))
-
-
-          
-          val final_e = 2* (sum_lambdas_e / (verifier.solutionSize - 1)) + scorer.rho(annotation.getMention.getNgram, annotation.getEntity, false)
-          val final_truth_e = 2* (sum_lambdas_truth_e / (verifier.solutionSize - 1)) + scorer.rho(annotation.getMention.getNgram, annotation.getGroundTruthEntity, false)
-
-          println("Final pt e = " + final_e + " ; final pt truth e = " + final_truth_e)
-          * 
-          */
-          
-//          println("WORDS:")
-//          scorer.rho(annotation.getMention.getNgram, annotation.getGroundTruthEntity, true)
-//          scorer.rho(annotation.getMention.getNgram, annotation.getEntity, true)
-          
-          println
-        }
       }
-      * 
-      */
-    }
     println
   }  
 	

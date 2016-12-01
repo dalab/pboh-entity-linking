@@ -19,8 +19,7 @@ class WordEntityProbsIndex extends java.io.Serializable  {
   val entToTotal = new TIntLongHashMap(INITIAL_SIZE);
 
   val entToNumNonzeroWordProbs = new TIntIntHashMap(INITIAL_SIZE);
-  
-  
+
 //  private val entToWordFreq = Array.fill[TIntIntHashMap](600000)(new TIntIntHashMap(300)); // 600 K words in total
 
   private val options = new Options()

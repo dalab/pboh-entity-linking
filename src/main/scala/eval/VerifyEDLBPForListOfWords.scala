@@ -82,8 +82,6 @@ class VerifyEDLBPForListOfWords(
     return new LBPPair(verifier, lbpstats)
   }
 
-  
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////  
   def runEDLoopyFullLambdasAndRhosLearnedOnOneInputList(
       tkspans : Array[String],
       entities : Array[Int],

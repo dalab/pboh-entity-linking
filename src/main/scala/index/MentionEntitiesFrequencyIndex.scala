@@ -2,15 +2,8 @@ package index;
 
 import gnu.trove.map.hash.THashMap
 import gnu.trove.set.hash.THashSet
-import loopybeliefpropagation.ScorerFull
-import md.Mention
-import scala.collection.JavaConversions._
-import loopybeliefpropagation.EntityScorePair
 import scala.collection.mutable.ArrayBuffer
 import context.PorterStemmer
-
-import java.io.File
-import java.nio.ByteBuffer
 
 
 /**

@@ -64,8 +64,6 @@ class StopWords extends Serializable {
   for (w <- stopWords) {
     map += PorterStemmer.stem(w.toLowerCase())
   }
-  //////////////////////
-  
 
   def isStopWord(w : String) : Boolean = {
     map.contains(PorterStemmer.stem(w.toLowerCase()))

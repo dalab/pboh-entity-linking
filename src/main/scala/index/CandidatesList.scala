@@ -2,13 +2,8 @@ package index
 
 import gnu.trove.map.hash.TIntIntHashMap
 import java.io.Serializable
-import java.util.Arrays
-import scala.collection.JavaConversions._
-import loopybeliefpropagation.ScorerFull
 import org.apache.commons.lang3.StringUtils
 import com.google.common.base.Joiner
-import scala.collection.mutable.ArrayBuffer
-import gnu.trove.map.hash.TIntDoubleHashMap
 
 /*
  * @param: nameFrequency = Total number of times the corresponding name is 
@@ -55,20 +50,7 @@ class CandidatesList extends Serializable {
       topCandidates.put(entity, other.topCandidates.get(entity))
     }
   }
-  
-  /*
-  def this(m : TIntDoubleHashMap) = {
-    this()
-    this.topCandidates = new TIntIntHashMap()
-    totalFrequency = 0
 
-    for (key <- m.keys()) {
-      val value = (m.get(key) * 100000).toInt
-      topCandidates.put(key, value)
-      totalFrequency += value
-    }
-  }
-  */
   def addEntity(ent : Int, freq : Int) = {
     if (!topCandidates.containsKey(ent)) {
       totalFrequency += freq

@@ -108,9 +108,6 @@ object Learning {
 
     sc.stop()
   }  
-  
-
-
 
   /*
    * For each pair (e_i,e_j) from the corpus, compute its frequency and

@@ -15,11 +15,6 @@ class AllIndexesBox(whichIndexes : String)  extends java.io.Serializable {
 
   val wikilinksEntityCooccurrIndexPath = "anchorsListFromEachWikilinksDoc.txt_dev_index"
   var wikilinksEntityCooccurrIndex : EntityCooccurrenceIndex = null
-
-  /* Freebase index.
-  val freebaseEntityCooccurrIndexPath = "anchorsListFromFrebaseRelations.txt"
-  val freebaseEntityCooccurrIndex : EntityCooccurrenceIndex
-  */
 	
   val mentionEntsFreqIndexPath = "mek-top-freq-crosswikis-plus-wikipedia-lowercase-top64.txt"
   var mentionEntsFreqIndex : MentionEntitiesFrequencyIndex = null
@@ -52,15 +47,6 @@ class AllIndexesBox(whichIndexes : String)  extends java.io.Serializable {
     wikipEntityCooccurrIndex.load(root + wikipEntityCooccurrIndexPath, true);
 	
     wikilinksEntityCooccurrIndex = new EntityCooccurrenceIndex("wikilinks_index")
-//    wikilinksEntityCooccurrIndex.load(root + wikilinksEntityCooccurrIndexPath, false); //////////////////// Uncomment this
-	
-    /*
-	freebaseEntityCooccurrIndex = EntityCooccurrenceIndex.load(root + freebaseEntityCooccurrIndexPath, false);
-	freebaseToWikiIDIndex = FreebaseWikipIndex.load(
-		root + freebaseWikiMapFile,
-		res.redirectIndex, 
-		res.entNameToIDIndex);
-	*/			
   }
   
   if (whichIndexes.contains("mentionEntsFreqIndex")) {

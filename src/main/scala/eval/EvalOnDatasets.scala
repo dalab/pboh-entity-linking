@@ -126,8 +126,7 @@ object EvalOnDatasets {
       total_num_mentions += input.size
     }
     
-//    val stats = sc.parallelize(testData, 112)  							////////////// Parallel run
-    val stats = testData 													////////////////// Serial run, change this !!!!!!!!!!!!!!!!!!!!!!!!
+    val stats = testData
     		.map(doc => evalOneDoc(doc, fewWeights, w, max_product))
     		.reduce((x,y) => x.add(y))
     
