@@ -14,5 +14,5 @@ results on the newest version 1.2.4 of Gerbil can be found here: http://gerbil.a
 
 To run the code, use 'mvn package'. The jars will be found in the target/ folder. However, it requires various indexes files made from Wikipedia, Crosswikis and the test datasets:
 
-UPDATE: indexes are now available online : https://polybox.ethz.ch/index.php/s/IOWjGrU3mjyzDSV 
-Please contact us (octavian.ganea at inf dot ethz dot ch) to receive the required password.
+UPDATE: indexes are now available online : https://polybox.ethz.ch/index.php/s/IOWjGrU3mjyzDSV . They are required in various places, but mostly in index/AllIndexesBox.scala . The files whose names end in _part* need to be concatenated in one big file without these suffixes before being used.
+Please contact us (octavian.ganea at inf dot ethz dot ch) to receive the required password and for other questions you might have.
