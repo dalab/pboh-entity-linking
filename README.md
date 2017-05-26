@@ -19,4 +19,5 @@ Please contact octavian.ganea at inf dot ethz dot ch to receive the required pas
 How to run the code:
 - Download the above indexes and update their locations inside the code. Do the same for the test sets.
 - Compile with 'mvn package'. Will generate a self-contained jar called target/PBoH-1.0-SNAPSHOT-jar-with-dependencies.jar
-- Run the code to test PBOH on the datasets mention in the paper using the command: scala -J-Xmx90g target/PBoH-1.0-SNAPSHOT-jar-with-dependencies.jar testPBOHOnAllDatasets max-product
+- Run the code to test PBOH on the datasets mentioned in the paper using the command: scala -J-Xmx90g target/PBoH-1.0-SNAPSHOT-jar-with-dependencies.jar testPBOHOnAllDatasets max-product
+- A new dataset can be added as follows: one needs to write a class similar to eval/datasets/AQUAINT_MSNBC_ACE04.scala that transforms an input text file with entity annotations into an object of type Array[(String, Array[(String,Int, Array[Int])])]. Each element of this list is a pair (doc_name, doc_annotations) in which doc_annotations is a list of entity annotations from the given document in the format  ((mention.toLowerCase(), entity, context)). Context is here a list of word IDs of words surrounding the given mention in a window of fixed size. The word IDs are obtained from word strings using the in-memory dictionary index/WordFreqDict.scala.   
