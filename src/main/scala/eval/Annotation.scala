@@ -1,6 +1,5 @@
 package eval
 
-import org.apache.commons.io.FilenameUtils
 import index.EntIDToNameIndex
 import md.Mention
 
@@ -25,7 +24,7 @@ class Annotation(
       filePath : String,
       groundTruthEntity : Int) = {
     this(entity, score, mention, groundTruthEntity)
-    this.filePath = FilenameUtils.normalize(filePath);
+    this.filePath = filePath;
   }	
 
   def getEntity() : Int = entity

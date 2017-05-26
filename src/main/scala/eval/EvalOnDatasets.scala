@@ -70,15 +70,13 @@ object EvalOnDatasets {
       evalOneDatasetInParallel(AIDA.loadDataset(true, allIndexesBox),  
         fewWeights, w, banner + paramsBannerNew, " AIDA test A", fullPrint, max_product, sc)
     
-    return null ///////////////// DELETE
-    
     val stats_AIDA_A = 
       evalOneDatasetInParallel(AIDA.loadDataset(true, allIndexesBox),  
         fewWeights, w, banner + paramsBannerNew, " AIDA test A", fullPrint, max_product, sc)
   
-    val stats_Wiki = 
-      evalOneDatasetInParallel(WikipediaDataset.loadDataset(allIndexesBox),  
-        fewWeights, w, banner + paramsBannerNew, " Wikipedia VALIDATION ", fullPrint, max_product, sc)    	
+//    val stats_Wiki = 
+//      evalOneDatasetInParallel(WikipediaDataset.loadDataset(allIndexesBox),  
+//        fewWeights, w, banner + paramsBannerNew, " Wikipedia VALIDATION ", fullPrint, max_product, sc)    	
         
     if (allSets) {
       evalOneDatasetInParallel(AIDA.loadDataset(false, allIndexesBox),  
@@ -90,17 +88,18 @@ object EvalOnDatasets {
       evalOneDatasetInParallel(AQUAINT_MSNBC_ACE04.loadDataset("ACE04", allIndexesBox),  
           fewWeights, w, banner + paramsBannerNew, " ACE04 ", fullPrint, max_product, sc)
     }
-        
-    val combinedMicro = (stats_Wiki._1 * stats_Wiki._3 + stats_AIDA_A._1 * stats_AIDA_A._3) / (stats_Wiki._3 + stats_AIDA_A._3)
-    val combinedMacro = (stats_Wiki._2 * stats_Wiki._4 + stats_AIDA_A._2 * stats_AIDA_A._4) / (stats_Wiki._4 + stats_AIDA_A._4)
-        
-    return (stats_AIDA_A._1 + stats_AIDA_A._2, 
-        combinedMicro + combinedMacro)
+       
+    return null
 
+//    val combinedMicro = (stats_Wiki._1 * stats_Wiki._3 + stats_AIDA_A._1 * stats_AIDA_A._3) / (stats_Wiki._3 + stats_AIDA_A._3)
+//    val combinedMacro = (stats_Wiki._2 * stats_Wiki._4 + stats_AIDA_A._2 * stats_AIDA_A._4) / (stats_Wiki._4 + stats_AIDA_A._4)
         
-    evalOneDatasetInParallel(wikipediaTestData.map(x => ("" + x._1, x._2)),  
-        fewWeights, w, banner + paramsBannerNew, " Wikipedia 1K random pages ", fullPrint, max_product, sc)
-    null
+//    return (stats_AIDA_A._1 + stats_AIDA_A._2, 
+//        combinedMicro + combinedMacro)
+        
+//    evalOneDatasetInParallel(wikipediaTestData.map(x => ("" + x._1, x._2)),  
+//        fewWeights, w, banner + paramsBannerNew, " Wikipedia 1K random pages ", fullPrint, max_product, sc)
+//    null
   }
 
   /*

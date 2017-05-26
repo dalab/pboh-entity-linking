@@ -17,6 +17,8 @@ import learning.ExtractWikiAnchorsFromWikipedia
 import context.WordFreqPerCorpus
 import md.Mention
 import scala.collection.mutable.ArrayBuffer
+import loopybeliefpropagation.ScorerWeights
+import eval.EvalOnDatasets
 
 object EL_LBP_Spark  {
   
@@ -95,6 +97,34 @@ object EL_LBP_Spark  {
 
       val console = new ConsoleEntityLinking
       console.consoleJustOutput(max_product)
+
+
+    } else if (program == "testPBOHOnAllDatasets") {
+      System.err.println(" Program : test on all datasets")
+      if (tailArgs.size < 1) {
+        System.err.println(" [ERROR] Please specify a parameter either 'max-product' or 'sum-product'.")
+        System.exit(1)
+      }
+      val max_product = if (tailArgs(0) == "max-product") true else false
+
+      // Load PBOH pre-validated weights:
+      val weights = new ScorerWeights
+      weights.g = 0.5
+      weights.b = 0.075
+      weights.delta_w_e = 1.0
+      weights.xi = 0.5
+      weights.delta_cocit = 0.5
+      weights.cocit_e_e_param = 0.01
+
+      EvalOnDatasets.evalAllDatasets(
+        allSets = true,
+        null,
+        weights,
+        w = null,
+        "TEST w = " + weights,
+        fullPrint = false,
+        max_product,
+        null)
 
     } else if (program == "learnFewParams") {
       System.err.println(" Program : learn Few Loopy Params")
