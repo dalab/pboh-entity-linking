@@ -6,7 +6,7 @@ Code: beta version
 
 Paper: "Probabilistic Bag-Of-Hyperlinks Model for Entity Linking" , Ganea O-E et al. , (proc. WWW 2016), http://dl.acm.org/citation.cfm?id=2882988
 
-Slides: http://people.inf.ethz.ch/ganeao/WWW16_slides_PBOH.pdf
+Slides, poster, online system and comparison with existing systems : http://people.inf.ethz.ch/ganeao
 
 Newest GERBIL results: 
 - PBOH is now fully integrated with GERBIL (D2KB setting). It can be used as a webservice: http://gerbil.aksw.org/gerbil/config 
