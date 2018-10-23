@@ -32,7 +32,7 @@ download_url= urls[0].get("href")
 print(download_url)
 response = browser.follow_link(download_url)
 
-file_name='your_filename_here.pdf'
+file_name='download_data.zip'
 with open(file_name, 'wb') as f:
     f.write(response.content)
 print("Download done")
