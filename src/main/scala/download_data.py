@@ -17,8 +17,9 @@ form = browser.select_form()
 password=""
 if len(password)<2:
         print("password is requied, please email octavian.")
-form.print_summary()
-#browser["input[id='password']"] = "pboh1"
+        exit(-1)
+#form.print_summary()
+
 form.set("password", password)
 
 browser.submit_selected()
