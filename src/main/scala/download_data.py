@@ -18,7 +18,7 @@ password=""
 if len(password)<2:
         print("password is requied, please email octavian.")
         exit(-1)
-#form.print_summary()
+form.print_summary()
 
 form.set("password", password)
 
